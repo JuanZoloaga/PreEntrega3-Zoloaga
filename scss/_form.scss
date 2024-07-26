@@ -1,0 +1,68 @@
+form{
+    @include flex(column, center, center, wrap);
+    margin: 1rem;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 1.8rem;
+    font-weight: 500;
+
+    @include mobile {
+      font-size: 1.8rem;
+    }
+    @include tablet {
+      font-size: 1.8rem;
+    }
+    @include desktop {
+      font-size: 1.8rem;
+    }
+
+    input{
+        margin: 1rem;
+        background-color: $beige;
+
+        @include mobile {
+            width: 30rem;
+          }
+          @include tablet {
+            width: 50rem;
+          }
+          @include desktop {
+            width: 70rem;
+          }
+
+
+    }
+    textarea{
+        margin: 1rem;
+        background-color: $beige;
+
+        @include mobile {
+            width: 30rem;
+          }
+          @include tablet {
+            width: 50rem;
+            height: 10rem;
+          }
+          @include desktop {
+            width: 70rem;
+          }
+
+    }
+
+    .botonsubmit{
+        @include mobile {
+            width: 10rem;
+          }
+          @include tablet {
+            width: 15rem;
+          }
+          @include desktop {
+            width: 20rem;
+          }
+        
+        &:hover{
+          transform: scale(1.02, 1.02);
+        }
+    }
+}

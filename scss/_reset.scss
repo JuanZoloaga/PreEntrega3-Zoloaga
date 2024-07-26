@@ -1,0 +1,22 @@
+* {
+  margin: auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+  @include mobile {
+    font-size: 35%;
+  }
+  @include tablet {
+    font-size: 55%;
+  }
+  @include desktop {
+    font-size: 62.5%;
+  }
+
+}

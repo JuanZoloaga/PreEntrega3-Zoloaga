@@ -1,0 +1,119 @@
+header {
+
+  margin: 0;
+
+  .navbar{
+    @include flex(row, center, center, nowrap);
+    list-style-type: none;
+    text-decoration: none;
+    color: $naranja;
+    font-size: 2.1rem;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    @include desktop {
+      padding-bottom: 2rem;
+    }
+
+
+    ul li a {
+      list-style-type: none;
+      text-decoration: none;
+      color: $naranja;
+
+      &:hover {
+        color: $marron;
+        transform: translateY(-2px);
+      }
+    }
+
+    .container{
+      padding: 2rem;
+
+      @include mobile {
+        @include flex(column, center, center, nowrap);
+        padding: 0;
+        margin: 0;
+      }
+      @include tablet {
+        @include flex(column, center, center, nowrap);
+        padding: 0;
+        margin: 0;
+      }
+      @include desktop {
+        @include flex(row, center, center, nowrap);
+        padding: 0;
+        margin: 0;
+      }
+
+      .imglogo{
+        @include mobile {
+          width: 80%;
+          height: auto;
+        }
+        @include tablet {
+          width: 100%;
+          height: auto;
+        }
+        @include desktop {
+          width: 100%;
+          height: auto;
+        }
+      }
+      .navbar-brand{
+        &:hover{
+          transform: scale(1.01, 1.01);
+        }
+        @include mobile {
+          @include flex(column, center, center, nowrap);
+          padding: 0;
+          margin: 0;
+          width: 80%;
+        }
+        @include tablet {
+          @include flex(column, center, center, nowrap);
+          padding: 0;
+          margin: 0;
+          width: 30rem;
+        }
+        @include desktop {
+          @include flex(row, center, center, nowrap);
+          padding: 0;
+          margin: 0;
+          width: 30rem;
+        }
+
+      }
+
+      .navbar-toggler {
+        margin: 2rem 0rem 1rem 0rem;
+        @include mobile {
+          font-size: 3rem;
+        }
+        @include tablet {
+          font-size: 2rem;
+        }
+      }
+
+
+    }
+
+  }
+
+  h1 {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: 2.2rem;
+    font-style: normal;
+    text-align: center;
+    padding: 0.2rem;
+    color: white;
+    background-color: $naranja;
+    border-radius: 2rem;
+    width: 80%;
+  }
+}
+
+

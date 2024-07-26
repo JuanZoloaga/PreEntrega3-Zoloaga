@@ -1,0 +1,763 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sedan:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Sedan:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sedan:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 35%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: 55%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+@media screen and (max-width: 767px) {
+  form {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  form {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  form {
+    font-size: 1.8rem;
+  }
+}
+form input {
+  margin: 1rem;
+  background-color: #FFFaeb;
+}
+@media screen and (max-width: 767px) {
+  form input {
+    width: 30rem;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  form input {
+    width: 50rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  form input {
+    width: 70rem;
+  }
+}
+form textarea {
+  margin: 1rem;
+  background-color: #FFFaeb;
+}
+@media screen and (max-width: 767px) {
+  form textarea {
+    width: 30rem;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  form textarea {
+    width: 50rem;
+    height: 10rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  form textarea {
+    width: 70rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  form .botonsubmit {
+    width: 10rem;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  form .botonsubmit {
+    width: 15rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  form .botonsubmit {
+    width: 20rem;
+  }
+}
+form .botonsubmit:hover {
+  transform: scale(1.02, 1.02);
+}
+
+html body header {
+  margin: 0;
+}
+html body header .navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  list-style-type: none;
+  text-decoration: none;
+  color: #CC6600;
+  font-size: 2.1rem;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+@media screen and (min-width: 1024px) {
+  html body header .navbar {
+    padding-bottom: 2rem;
+  }
+}
+html body header .navbar ul li a {
+  list-style-type: none;
+  text-decoration: none;
+  color: #CC6600;
+}
+html body header .navbar ul li a:hover {
+  color: #5b3013;
+  transform: translateY(-2px);
+}
+html body header .navbar .container {
+  padding: 2rem;
+}
+@media screen and (max-width: 767px) {
+  html body header .navbar .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html body header .navbar .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  html body header .navbar .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  html body header .navbar .container .imglogo {
+    width: 80%;
+    height: auto;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html body header .navbar .container .imglogo {
+    width: 100%;
+    height: auto;
+  }
+}
+@media screen and (min-width: 1024px) {
+  html body header .navbar .container .imglogo {
+    width: 100%;
+    height: auto;
+  }
+}
+html body header .navbar .container .navbar-brand:hover {
+  transform: scale(1.01, 1.01);
+}
+@media screen and (max-width: 767px) {
+  html body header .navbar .container .navbar-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin: 0;
+    width: 80%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html body header .navbar .container .navbar-brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin: 0;
+    width: 30rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  html body header .navbar .container .navbar-brand {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin: 0;
+    width: 30rem;
+  }
+}
+html body header .navbar .container .navbar-toggler {
+  margin: 2rem 0rem 1rem 0rem;
+}
+@media screen and (max-width: 767px) {
+  html body header .navbar .container .navbar-toggler {
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html body header .navbar .container .navbar-toggler {
+    font-size: 2rem;
+  }
+}
+html body header h1 {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 2.2rem;
+  font-style: normal;
+  text-align: center;
+  padding: 0.2rem;
+  color: white;
+  background-color: #CC6600;
+  border-radius: 2rem;
+  width: 80%;
+
+  z-index: -1;
+}
+html body main h2, html body main h3 {
+  margin: 1rem 1rem 2rem 0rem;
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+}
+html body main h3 {
+  color: white;
+  background-color: #CC6600;
+  margin-top: 2rem;
+  font-size: 2rem;
+  width: 60%;
+  border-radius: 2rem;
+}
+@media screen and (max-width: 767px) {
+  html body main h3 {
+    height: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html body main h3 {
+    height: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+html body main p {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+html body main img {
+  width: auto;
+  height: 30rem;
+}
+html body main .slide {
+  width: auto;
+}
+html body main .slide img {
+  width: 40rem;
+  height: auto;
+}
+@media screen and (max-width: 767px) {
+  html body main .slide img {
+    position: relative;
+    bottom: 5rem;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html body main .slide img {
+    position: relative;
+    bottom: 20rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  html body main .slide img {
+    position: relative;
+    bottom: 35rem;
+  }
+}
+html body main .slide .carousel-item {
+  height: 60rem;
+}
+@media screen and (max-width: 767px) {
+  html body main .slide .carousel-item {
+    height: 40rem;
+  }
+}
+html body main svg {
+  color: #CC6600;
+  margin: 1rem;
+}
+html body main .layout-index {
+  margin: 1rem;
+}
+html body main .layout-index ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+html body main .layout-index li {
+  list-style-type: none;
+  text-decoration: none;
+  text-align: center;
+  width: 30%;
+  background-color: #FFFaeb;
+  border-radius: 2rem;
+}
+html body main .layout-index p {
+  width: 80%;
+  height: auto;
+}
+html body main .layout-index2 {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+html body main .layout-index2 img {
+  width: 60%;
+  height: auto;
+}
+@media screen and (max-width: 767px) {
+  html body main .layout-index2 img {
+    width: 100%;
+    height: auto;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html body main .layout-index2 img {
+    width: 90%;
+  }
+}
+html body main .layout-index2 div {
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 70%;
+}
+@media screen and (max-width: 767px) {
+  html body main .layout-index2 div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+}
+html body main .layout-index2 p {
+  width: 30%;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html body main .layout-index2 p {
+    margin: 1rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  html body main .layout-index2 p {
+    width: 80%;
+    text-align: center;
+    margin: 1rem;
+  }
+}
+html body main .layout-index2 .img2 {
+  order: 1;
+}
+@media screen and (max-width: 767px) {
+  html body main .layout-index2 .img2 {
+    order: 0;
+  }
+}
+html body main .layout-ofertas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+html body main .layout-ofertas .space-layout-ofertas {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 2rem;
+}
+html body main .layout-ofertas img {
+  width: 30rem;
+}
+@media screen and (max-width: 767px) {
+  html body main .layout-ofertas img {
+    width: 20rem;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html body main .layout-ofertas img {
+    width: 25rem;
+  }
+}
+html body main .layout-ofertas div div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #FFFaeb;
+}
+html body main .layout-ofertas div div:hover {
+  transition: scale 2s;
+  transform: scale(1.1, 1.1);
+}
+html body main .layout-ofertas div div p {
+  width: 30rem;
+  height: 3rem;
+  text-align: center;
+}
+html body main .titulosucursal {
+  grid-area: titulosucursal;
+}
+html body main .horarios {
+  grid-area: horarios;
+  text-align: center;
+  background-color: #FFFaeb;
+}
+@media screen and (min-width: 1024px) {
+  html body main .horarios {
+    margin: 4rem 1rem 1rem 1rem;
+  }
+}
+html body main .imgsucursal {
+  grid-area: imgsucursal;
+  width: 90%;
+  height: 100%;
+  margin: 2rem;
+}
+html body main .mapasucursal {
+  grid-area: mapasucursal;
+  width: 90%;
+  height: 100%;
+  margin: 2rem;
+}
+html body main .direccion {
+  grid-area: direccion;
+}
+@media screen and (max-width: 767px) {
+  html body main .direccion {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html body main .direccion {
+    font-size: 2.5rem;
+    margin: 4rem 1rem 1rem 1rem;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  html body main .layout-sucursal {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html body main .layout-sucursal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.1fr 0.1fr 1fr 0.2fr;
+    grid-template-areas: "titulosucursal titulosucursal" "horarios horarios" "imgsucursal mapasucursal" "direccion direccion";
+  }
+}
+@media screen and (min-width: 1024px) {
+  html body main .layout-sucursal {
+    display: grid;
+    grid-template-columns: 0.1fr 1fr 1fr 0.1fr;
+    grid-template-rows: 0.5fr 0.4fr 6fr 0.8fr;
+    grid-template-areas: "titulosucursal titulosucursal titulosucursal titulosucursal" ". direccion direccion ." ". imgsucursal mapasucursal ." ". horarios horarios .";
+  }
+}
+html body main .layout-nosotros {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: 1rem;
+}
+html body main .layout-nosotros div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+@media screen and (max-width: 767px) {
+  html body main .layout-nosotros div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+}
+html body main .layout-nosotros div img {
+  margin: 1rem;
+  width: 45%;
+  height: auto;
+}
+html body main .layout-nosotros div p {
+  width: 30%;
+  text-align: center;
+  margin: 1rem;
+}
+@media screen and (max-width: 767px) {
+  html body main .layout-nosotros div p {
+    font-size: 1.8rem;
+    width: 80%;
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html body main .layout-nosotros div p {
+    font-size: 1.3rem;
+    width: 30%;
+  }
+}
+html body main .layout-contacto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+html body main .layout-contacto p {
+  text-align: center;
+}
+html body footer {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  text-align: left;
+  color: white;
+  background-color: #cc6600;
+  padding: 1rem;
+  border: 3rem;
+  font-weight: 2rem;
+}
+@media screen and (max-width: 767px) {
+  html body footer {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  html body footer {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  html body footer {
+    font-size: 1.8rem;
+  }
+}
+
+/* JAVASCRIPT */
+
+.productosavender{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 50px 0px 100px;
+}
+
+.card{
+  width: 100%;
+}
+
+.container-cart-products{
+  position: absolute;
+  top: 50px;
+
+  width: 400px;
+  z-index: 1;
+
+
+}
+
+.carrito{
+  position: relative;
+  top: 8px
+}
+.carrito:hover{
+  cursor: pointer;
+}
+
+.contador-productos{
+  position: absolute;
+  top: 30px;
+  right: 80px;
+  width: 20px;
+  height: 20px; 
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.contenedor-productos-carrito{
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+
+  top: 90px;
+  width: 400px;
+  right: 40px;
+
+  z-index: 1;
+
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+  border-radius: 10px;
+  background-color: white;
+
+}
+
+.icon-close{
+  width: 25px;
+  height: 25px;
+  color: black;
+}
+
+.icon-close:hover{
+  color:#CC6600;
+  cursor: pointer;
+}
+
+.productos-carrito{
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-end;
+  padding: 10px 0px 10px 0px;
+  width: 100%;
+
+
+
+}
+
+.informacion-productos-carrito{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 2;
+}
+
+.nombre-producto-carrito{
+  font-size: 60%;
+  font-weight: 700;
+  margin: 3px;
+  color: black;
+}
+
+.precio-producto-carrito{
+  font-size: 60%;
+  color: black;
+}
+
+.cantidad-producto-carrito{
+  font-size: 60%;
+  color: black;
+}
+
+.total-cart{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  gap: 20px;
+
+  border-top: 2px solid #CC6600;
+}
+
+.carrito-escondido{
+  display: none;
+}
+
+.row-product{
+  width: 90%;
+}
+
+.seleccionarProducto{
+  background-color: #CC6600;
+  color: white;
+}

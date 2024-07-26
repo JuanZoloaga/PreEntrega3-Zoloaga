@@ -1,0 +1,335 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sedan:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Sedan:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sedan:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "_colors";
+@import "_media-queries";
+@import "_reset";
+@import "_global";
+@import "_form";
+
+
+
+html {
+  body {
+    @import "_header";
+    main {
+
+
+
+// GENERALES//
+      h2 {
+        margin: 1rem 1rem 2rem 0rem;
+        font-size: 3rem;
+        font-weight: 600;
+        text-align: center;
+
+      }
+      h3 {
+        @extend h2;
+        color: white;
+        background-color: $naranja;
+        margin-top: 2rem;
+        font-size: 2rem;
+        width: 60%;
+        border-radius: 2rem;
+
+        @include mobile {
+          height: 4rem;
+          @include flex(row, center, center, wrap);
+        }
+        @include tablet {
+          height: 4rem;
+          @include flex(row, center, center, wrap);
+        }
+      }
+
+      p {
+        font-size: 1.8rem;
+        font-weight: 500;
+      }
+
+      img {
+        width: auto;
+        height: 30rem;
+      }
+
+      .slide {
+        width: auto;
+
+        img {
+          width: 40rem;
+          height: auto;
+
+          @include mobile {
+            position: relative;
+            bottom: 5rem;
+          }
+          @include tablet {
+            position: relative;
+            bottom: 20rem;
+          }
+          @include desktop {
+            position: relative;
+            bottom: 35rem;
+          }
+
+        }
+
+        .carousel-item{
+          height: 60rem;
+
+          @include mobile {
+            height: 40rem;
+          }
+        }
+      }
+      svg {
+        color: $naranja;
+        margin: 1rem;
+      }
+
+// PAGINA INDEX//
+
+      .layout-index {
+        margin: 1rem;
+
+        ul {
+          @include flex(row, center, center, wrap);
+        }
+
+        li {
+          list-style-type: none;
+          text-decoration: none;
+          text-align: center;
+          width: 30%;
+
+          background-color: $beige;
+          border-radius: 2rem;
+        }
+        p {
+          width: 80%;
+          height: auto;
+        }
+      }
+      .layout-index2 {
+        margin: 1rem;
+        @include flex(column, center, center, nowrap);
+
+        img {
+          width: 60%;
+          height: auto;
+
+          @include mobile {
+            width: 100%;
+            height: auto;
+          }
+          @include tablet {
+            width: 90%;
+          }
+        }
+
+        div {
+          margin: 1rem;
+          @include flex(row, center, center, nowrap);
+          width: 70%;
+
+          @include mobile {
+            @include flex(column, center, center, nowrap);
+          }
+        }
+
+        p {
+          width: 30%;
+
+          @include tablet {
+            margin: 1rem;
+          }
+
+          @include mobile {
+            width: 80%;
+            text-align: center;
+            margin: 1rem;
+          }
+          
+        }
+
+        .img2 {
+          order: 1;
+
+          @include mobile {
+            order: 0;
+          }
+        }
+      }
+
+// PAGINA OFERTAS//
+
+      .layout-ofertas{
+        @include flex(column, center, center, wrap);
+
+        .space-layout-ofertas{
+          @include flex(row, center, center, wrap);
+          margin: 2rem;
+        }
+
+        img{
+          width: 30rem;
+
+          @include mobile {
+            width: 20rem;
+          }
+          @include tablet {
+            width: 25rem;
+          }
+        }
+
+        div div{
+          @include flex(column, center, center, wrap);
+          margin: 1rem;
+          padding: 1rem;
+          background-color: $beige;
+
+
+          &:hover{
+            transition: scale 2s;
+            transform: scale(1.1, 1.1);
+          }
+
+          p{
+            width: 30rem;
+            height: 3rem;
+            text-align: center;
+          }
+        }
+      }
+
+// PAGINA SUCURSAL//
+
+      .titulosucursal{
+        grid-area: titulosucursal;
+      }
+      .horarios{
+        grid-area: horarios;
+        text-align: center;
+        background-color: $beige;
+
+        @include desktop {
+          margin: 4rem 1rem 1rem 1rem;
+          }
+  
+
+      }
+      .imgsucursal{
+        grid-area: imgsucursal;
+        width: 90%;
+        height: 100%;
+        margin: 2rem;
+      }
+      .mapasucursal{
+        grid-area: mapasucursal;
+        width: 90%;
+        height: 100%;
+        margin: 2rem;
+      }
+      .direccion{
+        grid-area: direccion;
+
+        @include mobile {
+          font-size: 2.5rem;
+        }
+        @include tablet {
+          font-size: 2.5rem;
+          margin: 4rem 1rem 1rem 1rem;
+          text-align: center;
+        }
+
+      }
+
+      .layout-sucursal{
+
+          @include mobile {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+          }
+          @include tablet {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 0.1fr 0.1fr 1fr 0.2fr;
+            grid-template-areas:
+              "titulosucursal titulosucursal"
+              "horarios horarios"
+              "imgsucursal mapasucursal"
+              "direccion direccion";
+          }
+          @include desktop {
+            display: grid;
+            grid-template-columns: 0.1fr 1fr 1fr 0.1fr;
+            grid-template-rows: 0.5fr 0.4fr 6fr 0.8fr;
+            grid-template-areas:
+              "titulosucursal titulosucursal titulosucursal titulosucursal"
+              ". direccion direccion ."
+              ". imgsucursal mapasucursal ."
+              ". horarios horarios .";
+          }
+        }
+
+// PAGINA NOSOTROS//
+
+      .layout-nosotros{
+          @include flex(column, center, center, nowrap);
+          margin: 1rem;
+
+          div{
+            @include flex(row, center, center, nowrap);
+
+            @include mobile {
+              @include flex(column, center, center, nowrap);
+            }
+
+            img{
+              margin: 1rem;
+              width: 45%;
+              height: auto;
+            }
+
+            p{
+            width: 30%;
+            text-align: center;
+            margin: 1rem;
+
+            @include mobile {
+              font-size: 1.8rem;
+              width: 80%;
+              margin-bottom: 2rem;
+            }
+            @include tablet {
+              font-size: 1.3rem;
+              width: 30%;
+            }
+
+            }
+          }
+      }
+
+// PAGINA CONTACTO//
+      .layout-contacto{
+        @include flex(column, center, center, nowrap);
+
+        p{
+          text-align: center
+        }
+      }
+      }
+    @import "_footer";
+  }
+}
+
+
+
+

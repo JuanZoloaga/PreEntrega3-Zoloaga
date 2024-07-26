@@ -1,0 +1,22 @@
+footer{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    text-align: left;
+    color: white;
+    background-color: #cc6600;
+    padding: 1rem;
+    border: 3rem;
+    font-weight: 2rem;
+
+    @include mobile{
+        font-size: 1.2rem;
+    }
+    @include tablet{
+        font-size: 1.5rem;
+    }
+    @include desktop{
+        font-size: 1.8rem;
+    }
+}
+
