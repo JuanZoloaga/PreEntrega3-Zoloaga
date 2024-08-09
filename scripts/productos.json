@@ -1,0 +1,82 @@
+[
+    {
+        "nombre": "Solo - Maní frito con merkén",
+        "precio": "$3000",
+        "infoProducto": "200g",
+        "cantidad": "0",
+        "img": "../images/marketplace/manifrito.jpg"
+    },
+
+    {
+        "nombre": "Solo - Maní con cobertura sabor cordero ahumado",
+        "precio": "$3000",
+        "infoProducto": "200g",
+        "cantidad": "0",
+        "img": "../images/marketplace/soloManiconCobertura.jpg"
+    },
+
+    {
+        "nombre": "Cereal - Fideos Integrales Espinaca",
+        "precio": "$4000",
+        "infoProducto": "260g",
+        "cantidad": "0",
+        "img": "../images/marketplace/fideosintegralesespinaca.jpg"
+    },
+
+    {
+        "nombre": "Orox - Fideos de arroz",
+        "precio": "$3800",
+        "infoProducto": "400g",
+        "cantidad": "0",
+        "img": "../images/marketplace/oroxFideosdeArroz.jpg"
+    },
+
+    {
+        "nombre": "Nuestros Sabores - Chips de Papas con pimienta negra y sal marina",
+        "precio": "$3500",
+        "infoProducto": "250g",
+        "cantidad": "0",
+        "img": "../images/marketplace/nuestrosSaboresChips.jpg"
+    },
+
+    {
+        "nombre": "Antojitos - Nachos sabor cheddar",
+        "precio": "$3600",
+        "infoProducto": "250g",
+        "cantidad": "0",
+        "img": "../images/marketplace/antojitosNachos.jpg"
+    },
+
+    {
+        "nombre": "Angiola - Budín con chips de chocolate",
+        "precio": "$2800",
+        "infoProducto": "200g",
+        "cantidad": "0",
+        "img": "../images/marketplace/budinAngiola.jpg"
+    },
+
+    {
+        "nombre": "Natural Pop - Premezcla Crepes Veggie",
+        "precio": "$3200",
+        "infoProducto": "60g",
+        "cantidad": "0",
+        "img": "../images/marketplace/premezclacrepes.jpg"
+    },
+
+    {
+        "nombre": "Natural Pop - Premezcla Falafel de arvejas y quinoa",
+        "precio": "$3200",
+        "infoProducto": "60g",
+        "cantidad": "0",
+        "img": "../images/marketplace/premezclaFalafel.jpg"
+    },
+
+    {
+        "nombre": "Natural Pop - Premezcla Fainá sin gluten",
+        "precio": "$3200",
+        "infoProducto": "60g",
+        "cantidad": "0",
+        "img": "../images/marketplace/premezclaFaina.jpg"
+    }
+
+]

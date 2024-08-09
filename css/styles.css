@@ -639,11 +639,18 @@ html body footer {
   align-items: center;
   flex-wrap: wrap;
   padding: 50px 0px 100px;
+  width: 70%;
 }
 
-.card{
-  width: 100%;
+
+
+.cantidad{
+  padding: 1rem;
 }
+.cantidad span{
+  display: none;
+}
+
 
 .container-cart-products{
   position: absolute;
@@ -682,7 +689,7 @@ html body footer {
   flex-wrap: wrap;
 
   top: 90px;
-  width: 400px;
+  width: 450px;
   right: 40px;
 
   z-index: 1;
@@ -722,6 +729,10 @@ html body footer {
   flex: 2;
 }
 
+.informacion-productos-carrito p {
+  width: 25rem;
+}
+
 .nombre-producto-carrito{
   font-size: 60%;
   font-weight: 700;
@@ -737,6 +748,8 @@ html body footer {
 .cantidad-producto-carrito{
   font-size: 60%;
   color: black;
+  width: 2rem;
+  padding-right: 3rem;
 }
 
 .total-cart{
@@ -760,4 +773,19 @@ html body footer {
 .seleccionarProducto{
   background-color: #CC6600;
   color: white;
+  height: 3rem;
+}
+
+.card-body h5{
+  font-size: 1.5rem;
+  height: 4.2rem;
+}
+
+.card-body h6{
+  font-size: 1.5rem;
+}
+
+.alert{
+  height: 5rem;
+  width: 30rem;
 }

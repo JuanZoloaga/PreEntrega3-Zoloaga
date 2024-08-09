@@ -1,54 +1,66 @@
-//Crear carrito vacío
+//VARIABLES GENERALES
+
+//variable para agregar productos al HTML con fetch desde productos.json
+const seccionAVender = document.getElementById("productosavender");
+
+//variables para generar un carrito vacío en el LOCAL-STORAGE
 let carritoTotal = [];
+const carritoEnLocalStorage = localStorage.getItem("carrito")
+
+//variables para actualizar carrito
+const itemsCarrito = document.querySelector(".contenedor-productos-carrito")
+const lineaProductoCarrito = document.querySelector('.listadoProductos')
+const contarProductos = document.querySelector('#contador-productos')
+
+
+//variable para abrir y cerrar carrito
+const botonAperturaCarrito = document.querySelector(".carrito-icono")
+
+//variable para eliminar productos del carrito
+const carritoInfo = document.querySelector('.carrito')
+
+//variable para seleccionar un producto y enviarlo al carrito
+const productslist = document.querySelector('.productosavender')
+
+
+
 
 
 
 
 //generar un carrito vacío como primera vez y guardar en Local Storage
-const pasarLSCarritoaJSON = localStorage.getItem("carrito")
-if(pasarLSCarritoaJSON == null){
-    const hacerJSONCarrito = JSON.stringify(carritoTotal)
-    localStorage.setItem("carrito",hacerJSONCarrito)
-}
+carritoEnLocalStorage == null ? localStorage.setItem("carrito", JSON.stringify(carritoTotal)):"";
 
-
-
-//mostrar en HTML el carrito
-const contenedorCarrito = document.querySelector(".contenedor-productos-carrito")
-const rowProducto = document.querySelector('.row-product')
-const informacionCarrito = document.querySelector('.productos-carrito')
-const valorTotal = document.querySelector(".total")
-const contarProductos = document.querySelector('#contador-productos')
-
+//funcionalidad de que tome los datos del localstorage, los paresee y luego los muestre en el carrito
 const mostrarHTML = () => {
 
-    const pasarLSCarritoaJSON = localStorage.getItem("carrito")
-    const pasarJSONCarritoaVarible = JSON.parse(pasarLSCarritoaJSON)
+    transformarJSONdeCarritoaArray = JSON.parse(localStorage.getItem("carrito"))
 
     let totalPagar= 0;
     
     let totalItemCarrito = 0;
 
-    rowProducto.innerHTML=''
-
+    itemsCarrito.innerHTML=''
         
-        //si no tiene nada el carrito muestra que no tiene nada
-        if(!pasarJSONCarritoaVarible.length){
-            contenedorCarrito.innerHTML=`
-            <p>El carrito está vacío</p>
+        //si no tiene ningún producto, no muestra nada
+        if(!transformarJSONdeCarritoaArray.length){
+            itemsCarrito.innerHTML=`
+            <div class="listadoProductos">
+            <p class"carritovacio">El carrito está vacío</p>
+            </div>
             `
-        }else{
+            contarProductos.innerText = totalItemCarrito;
 
-  
 
-    
-        //mostrar carrito por cada objeto del array "carrito parseado"
-        pasarJSONCarritoaVarible.forEach( product => {
-            const containerProducts = document.createElement("div")
+        }else{ //mostrar carrito por cada objeto del array "carrito parseado"
+
+
+
+            transformarJSONdeCarritoaArray.forEach( product => {
+            let containerProducts = document.createElement("div")
             containerProducts.classList.add("productos-carrito")
     
             containerProducts.innerHTML = `       
-                <div class="productos-carrito">
                     <div class="informacion-productos-carrito">
                         <span class="cantidad-producto-carrito">${product.cantidad}</span>
                         <p class="nombre-producto-carrito">${product.nombre}</p>
@@ -60,77 +72,137 @@ const mostrarHTML = () => {
                     </div>
                     `
     
-            rowProducto.append(containerProducts)
+                    itemsCarrito.append(containerProducts)
     
             totalPagar = totalPagar + parseInt(product.precio.slice(1)) * parseInt(product.cantidad)
             totalItemCarrito = totalItemCarrito + product.cantidad
+
+
+
         })
-    
+
+        let totalCarrito = document.createElement("div")
+        totalCarrito.classList.add("total-cart")
+        totalCarrito.innerHTML= `
+                        <h3>Total</h3>
+                        <span class="total">0</span>
+                        `
+        itemsCarrito.append(totalCarrito)
+
+        valorTotal = document.querySelector('.total')
+
+        //agregamos el precio a pagar total en el carrito
         valorTotal.innerText = `$${totalPagar}`;
+        //agregamos info al contador de productos
         contarProductos.innerText = totalItemCarrito;
 
     }
-    }
+}
 
 mostrarHTML()
 
 
+
+//mostrar productos en página productos
+fetch('../scripts/productos.json')
+    .then((response) => response.json())
+    .then((datosProductos) => {
+        datosProductos.forEach((producto) => {
+            const div = document.createElement('div');
+
+            div.innerHTML= `
+            <div class="card" style="width: 26rem; height:44.5rem">
+                <img src="${producto.img}" class="card-img-top" alt="producto">
+                <div class="card-body">
+                    <h5 class="nombreProducto">${producto.nombre}</h5>
+                    <h6 class="precioProducto">${producto.precio}</h6>
+                    <p class="infoProducto">${producto.infoProducto}</p>
+                <div class="col-5">
+                    <div class="form-group js-quantity form-quantity">
+                    <div class="cantidad" data-component="product.quantity">
+                    <span class="js-quantity-down form-quantity-icon btn" data-component="product.quantity.minus">
+                    <svg class="icon-inline icon-w-12 icon-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M368 224H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h352c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16z"></path></svg>
+                    </span>
+                    <div class="form-control-container col" data-component="product.adding-amount">
+                    <input type="number" id="cantidadProducto" class=" form-control js-quantity-input form-control-inline" autocorrect="off" autocapitalize="off" name="quantity" value="1" min="1" aria-label="Cambiar cantidad" data-component="adding-amount.value">
+                    </div>
+                    <span class="js-quantity-up form-quantity-icon btn" data-component="product.quantity.plus">
+                    <svg class="icon-inline icon-w-12 icon-lg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M368 224H224V80c0-8.84-7.16-16-16-16h-32c-8.84 0-16 7.16-16 16v144H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h144v144c0 8.84 7.16 16 16 16h32c8.84 0 16-7.16 16-16V288h144c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16z"></path></svg>
+                    </span>
+                    </div>
+                    </div>
+                </div>
+                <button type="button" class="seleccionarProducto">Agregar al carrito</button>
+            </div>
+            </div>
+            `
+            seccionAVender.appendChild(div);
+        })
+    })
+
+
+
+
+
 //funcionalidad que abra y cierre el carrito al seleccionar el icono "cart"
-const botonAperturaCarrito = document.querySelector(".carrito-icono")
-
-
 botonAperturaCarrito.addEventListener("click", () => {
-    contenedorCarrito.classList.toggle('carrito-escondido')
-    mostrarHTML()
+    itemsCarrito.classList.toggle('carrito-escondido')
 })
 
 
-
-
-
 //borrar producto en carrito
-const carritoInfo = document.querySelector('.carrito')
 carritoInfo.addEventListener('click' , s => {
 
+    
     if(s.target.classList.contains('icon-close')){
-        const eliminarProd = s.target.parentElement
+        eliminarProd = s.target.parentElement
 
         let seleccionProductoaEliminar = {
             nombre: eliminarProd.querySelector('p').textContent,
         };
 
-        const pasarLSCarritoaJSON = localStorage.getItem("carrito")
-        const pasarJSONCarritoaVarible = JSON.parse(pasarLSCarritoaJSON)
+        transformarJSONdeCarritoaArray = JSON.parse(localStorage.getItem("carrito"))
 
-        const actualizarProductos = pasarJSONCarritoaVarible.filter((producto) => producto.nombre != seleccionProductoaEliminar.nombre)
+        actualizarProductos = transformarJSONdeCarritoaArray.filter((producto) => producto.nombre != seleccionProductoaEliminar.nombre)
         carritoTotal = [...actualizarProductos]
-        const pasarCarritoTotalaJSON = JSON.stringify(carritoTotal)
-        const pasarJSONCarritoaLS = localStorage.setItem("carrito",pasarCarritoTotalaJSON)
-        mostrarHTML()
-        
+        localStorage.setItem("carrito", JSON.stringify(carritoTotal))
+
+
+        Toastify({
+            text: "has eliminado un producto",
+            duration: 1500,
+            className: "alert",
+            style: {
+                background: "linear-gradient(to right, #CC6600, #CC6600)",
+              },
+    
+        }).showToast();
+
         }
+    mostrarHTML()
+
 })
 
+
 //seleccionar producto y sumarlo al carrito
-const productslist = document.querySelector('.productosavender')
 productslist.addEventListener('click' , s => {
 
     if(s.target.classList.contains('seleccionarProducto')){
-        const producto = s.target.parentElement
+        producto = s.target.parentElement
 
         let seleccionProducto = {
             nombre: producto.querySelector('h5').textContent,
             precio: producto.querySelector('h6').textContent,
-            cantidad: parseInt(producto.querySelector('input').value),
+            cantidad: parseInt(producto.querySelector('#cantidadProducto').value),
         };
+        
+        transformarJSONdeCarritoaArray = JSON.parse(localStorage.getItem("carrito"))
 
-        const pasarLSCarritoaJSON = localStorage.getItem("carrito")
-        const pasarJSONCarritoaVarible = JSON.parse(pasarLSCarritoaJSON)
 
-        //si tiene producto en el carrito, sumarlo
-        const buscarProducto = pasarJSONCarritoaVarible.some(producto => producto.nombre === seleccionProducto.nombre)
+        //si el producto seleccionado ya está en el carrito, sumarlo a la cantidad
+        const buscarProducto = transformarJSONdeCarritoaArray.some(producto => producto.nombre === seleccionProducto.nombre)
         if(buscarProducto){
-            const actualizarProductos = pasarJSONCarritoaVarible.map(producto => {
+            actualizarProductos = transformarJSONdeCarritoaArray.map(producto => {
                 if(producto.nombre === seleccionProducto.nombre){
                     producto.cantidad = producto.cantidad + seleccionProducto.cantidad
                     return producto
@@ -142,23 +214,23 @@ productslist.addEventListener('click' , s => {
 
             })
             carritoTotal = [...actualizarProductos]
-            const pasarCarritoTotalaJSON = JSON.stringify(carritoTotal)
-            const pasarJSONCarritoaLS = localStorage.setItem("carrito",pasarCarritoTotalaJSON)
-            mostrarHTML()
+            localStorage.setItem("carrito", JSON.stringify(carritoTotal))
 
         //si no lo tiene, agregar la línea nueva
         }else{
-            carritoTotal = [...pasarJSONCarritoaVarible, seleccionProducto]
-            const pasarCarritoTotalaJSON = JSON.stringify(carritoTotal)
-            const pasarJSONCarritoaLS = localStorage.setItem("carrito",pasarCarritoTotalaJSON)
-            mostrarHTML()
+            carritoTotal = [...transformarJSONdeCarritoaArray, seleccionProducto]
+            localStorage.setItem("carrito", JSON.stringify(carritoTotal))
 
         }
 
-        mostrarHTML()
     }
-
-    mostrarHTML()
+mostrarHTML()
 })
 
-
+setTimeout(() => {
+    Swal.fire({
+        title: 'Bienvenido a nuestro emprendimiento!',
+        icon: 'info',
+        confirmButtonText: 'Continuar'
+      })
+}, 2000);
